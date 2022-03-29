@@ -1,4 +1,4 @@
-package main.quickpractices.BFSDFS;
+package main.quickpractices.bfsdfs;
 
 public class MaxAreaOfIsland {
     private int m;

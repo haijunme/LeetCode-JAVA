@@ -1,4 +1,4 @@
-package main.quickpractices.Recursion;
+package main.quickpractices.recursion;
 
 import main.shared.TreeNode;
 

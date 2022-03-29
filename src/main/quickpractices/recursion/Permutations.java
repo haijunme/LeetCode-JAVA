@@ -1,7 +1,6 @@
-package main.quickpractices.Recursion;
+package main.quickpractices.recursion;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Permutations {
