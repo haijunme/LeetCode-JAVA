@@ -1,4 +1,4 @@
-# A Case Study of 77. Combinations
+# A Case Study of 5. Longest Palindromic Substring
 
 ## V1 Code
 ![img.png](img.png)
