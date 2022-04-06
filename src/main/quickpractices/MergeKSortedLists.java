@@ -2,45 +2,11 @@ package main.quickpractices;
 
 import main.shared.ListNode;
 
+import java.util.Arrays;
 import java.util.Map;
 import java.util.TreeMap;
 
 public class MergeKSortedLists {
-    public static ListNode mergeKLists2(ListNode[] lists) {
-        ListNode headToReturn = null;
-        ListNode currentNode = null;
-        while (true) {
-            int minValue = Integer.MAX_VALUE;
-            int minIndex = 0;
-            int exhaustedListCount = 0;
-            for (int i = 0; i < lists.length; i++) {
-                ListNode currentHead = lists[i];
-                if (currentHead == null) {
-                    exhaustedListCount += 1;
-                } else if (currentHead.val <= minValue) {
-                    minValue = currentHead.val;
-                    minIndex = i;
-                }
-            }
-            if (exhaustedListCount == lists.length) {
-                break;
-            }
-            if (headToReturn == null) {
-                headToReturn = new ListNode(minValue, null);
-                currentNode = headToReturn;
-            } else {
-                currentNode.next = new ListNode(minValue, null);
-                currentNode = currentNode.next;
-            }
-            if (lists[minIndex] != null) {
-                lists[minIndex] = lists[minIndex].next;
-            }
-
-        }
-        return headToReturn;
-    }
-
-
     public static ListNode mergeKLists(ListNode[] lists) {
         TreeMap<Integer, Integer> map = new TreeMap<>();
         for (ListNode node : lists) {
@@ -81,6 +47,5 @@ public class MergeKSortedLists {
         ListNode node22 = new ListNode(2, node23);
         ListNode node21 = new ListNode(1, node22);
 
-        mergeKLists2(new ListNode[] {node21, node11});
     }
 }
