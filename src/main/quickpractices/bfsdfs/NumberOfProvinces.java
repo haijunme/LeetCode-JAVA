@@ -37,6 +37,6 @@ public class NumberOfProvinces {
 
     public static void main(String[] args) {
         var solution = new NumberOfProvinces();
-        System.out.println(solution.findCircleNum(new int[][]{{1,0,0,1}, {0,1,1,0}, {0,1,1,1}, {1,0,1,1}}));
+        System.out.println(solution.findCircleNum(new int[][]{{1, 0, 0, 1}, {0, 1, 1, 0}, {0, 1, 1, 1}, {1, 0, 1, 1}}));
     }
 }
