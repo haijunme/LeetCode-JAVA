@@ -1,4 +1,4 @@
-package main.quickpractices.dynamicprogramming;
+package main.quickpractices.dynamicprogramming.kadane;
 
 public class MaximumArray {
     public int maxSubArray(int[] nums) {

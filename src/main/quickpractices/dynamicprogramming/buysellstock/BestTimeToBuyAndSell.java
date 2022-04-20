@@ -1,4 +1,4 @@
-package main.quickpractices.dynamicprogramming;
+package main.quickpractices.dynamicprogramming.buysellstock;
 
 public class BestTimeToBuyAndSell {
     public int maxProfit(int[] prices) {

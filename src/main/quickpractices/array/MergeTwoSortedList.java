@@ -1,4 +1,4 @@
-package main.quickpractices;
+package main.quickpractices.array;
 
 import main.shared.ListNode;
 
