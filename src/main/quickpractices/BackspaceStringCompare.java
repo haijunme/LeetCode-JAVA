@@ -17,8 +17,8 @@ public class BackspaceStringCompare {
     }
 
     public boolean backspaceCompare(String s, String t) {
-        String sProcessed = buildString(s);
-        String tProcessed = buildString(t);
+        String sProcessed = this.buildString(s);
+        String tProcessed = this.buildString(t);
         return Objects.equals(sProcessed, tProcessed);
     }
 
