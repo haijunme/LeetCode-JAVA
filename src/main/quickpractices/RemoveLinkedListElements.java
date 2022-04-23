@@ -16,8 +16,9 @@ public class RemoveLinkedListElements {
         while (current != null) {
             if (current.val == val) {
                 prev.next = current.next;
+            } else {
+                prev = current;
             }
-            prev = current;
             current = current.next;
         }
         return sentinel.next;
