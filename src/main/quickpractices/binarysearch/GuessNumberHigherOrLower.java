@@ -4,7 +4,7 @@ public class GuessNumberHigherOrLower {
 
     // Stub function
     private int guess(int x) {
-        return Integer.compare(x, 6);
+        return Integer.compare(6, x);
     }
 
     public int guessNumber(int n) {
@@ -25,5 +25,10 @@ public class GuessNumberHigherOrLower {
             }
         }
         return -1;
+    }
+
+    public static void main(String[] args) {
+        var solution = new GuessNumberHigherOrLower();
+        System.out.println(solution.guessNumber(10));
     }
 }

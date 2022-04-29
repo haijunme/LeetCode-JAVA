@@ -5,12 +5,7 @@ import java.util.Comparator;
 import java.util.PriorityQueue;
 
 public class MeetingRoomsII {
-    private static final Comparator<int[]> INTERVAL_COMPARATOR = new Comparator<int[]>() {
-        @Override
-        public int compare(int[] o1, int[] o2) {
-            return o1[0] - o2[0];
-        }
-    };
+    private static final Comparator<int[]> INTERVAL_COMPARATOR = Comparator.comparingInt(o -> o[0]);
 
     public int minMeetingRooms(int[][] intervals) {
         Arrays.sort(intervals, INTERVAL_COMPARATOR);
