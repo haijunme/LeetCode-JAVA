@@ -18,5 +18,7 @@ public class TwoDimensionalArrayList {
         firstPart2.set(1, firstPart2.get(1) + 1);
         System.out.println(firstPart2);
         System.out.println(twoDArrayList.get(0));
+
+        LinkedHashMap<Integer, Integer> map = new LinkedHashMap<>();
     }
 }
