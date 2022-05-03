@@ -10,18 +10,18 @@ public class MinimumWindowSubstring {
         return true;
     }
 
-
     public String minWindow(String s, String t) {
-        // create a map to track the requirement
+        // Create a map to track the requirement.
         Map<Character, Integer> requirement = new HashMap<>();
         for (int i = 0; i < t.length(); i++) {
             Character current = t.charAt(i);
             requirement.put(current, requirement.getOrDefault(current, 0) + 1);
         }
 
-        // create a deque to track indexes, peekFirst() will give the start while peekLast() will give the
-        // end
-        Deque<Integer> deque = new ArrayDeque<>();
+        // Create a deque to track indexes. For any acceptable string,
+        // peekFirst() will give the start while peekLast() will give the
+        // end.
+        Deque<Integer> indexes = new ArrayDeque<>();
 
         String answer = "";
         int minLength = Integer.MAX_VALUE;
@@ -30,18 +30,19 @@ public class MinimumWindowSubstring {
             Character current = s.charAt(i);
 
             if (requirement.containsKey(current)) {
-                deque.addLast(i);
+                indexes.addLast(i);
                 requirement.put(current, requirement.get(current) - 1);
             }
 
-            while (hasFoundAllCharacters(requirement.values()) && !deque.isEmpty()) {
-                Integer start = deque.peekFirst();
-                Integer end = deque.peekLast();
+            // Attempt to reduce the size of our window to get the min value.
+            while (hasFoundAllCharacters(requirement.values()) && !indexes.isEmpty()) {
+                Integer start = indexes.peekFirst();
+                Integer end = indexes.peekLast();
                 if (end - start + 1 < minLength) {
                     minLength = end - start + 1;
                     answer = s.substring(start, end+1);
                 }
-                Integer removed = deque.pollFirst();
+                Integer removed = indexes.pollFirst();
                 requirement.put(s.charAt(removed), requirement.get(s.charAt(removed)) + 1);
             }
         }
