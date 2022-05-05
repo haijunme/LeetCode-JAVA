@@ -19,8 +19,6 @@ public class OperatorPrecendence {
 
 
     public static void main(String[] args) {
-        if (testOne() || testTwo() && testThree()) {
-            System.out.println("haha");
-        }
+        System.out.println(4 << 10);
     }
 }
