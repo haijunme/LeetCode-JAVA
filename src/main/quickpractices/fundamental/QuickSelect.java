@@ -8,7 +8,7 @@ public class QuickSelect {
         for (int i = low; i <= high; i++) {
             if (array[i] < pivot) {
                 int temp = array[i];
-                array[i] = temp;
+                array[i] = array[pivotIndex];
                 array[pivotIndex] = temp;
                 pivotIndex++;
             }
@@ -36,6 +36,6 @@ public class QuickSelect {
 
     public static void main(String[] args) {
         var solution = new QuickSelect();
-        System.out.println(solution.quickSelect(new int[]{ 10, 4, 5, 8, 6, 11, 26}, 3));
+        System.out.println(solution.quickSelect(new int[]{ 6, 7, 8, 3, 4, 2, 5}, 3));
     }
 }
