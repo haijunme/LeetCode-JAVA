@@ -4,18 +4,18 @@ public class QuickSelect {
 
     private int partition(int[] array, int low, int high) {
         int pivot = array[high];
-        int pivotIndex = low;
+        int insertion = low;
         for (int i = low; i <= high; i++) {
             if (array[i] < pivot) {
                 int temp = array[i];
-                array[i] = array[pivotIndex];
-                array[pivotIndex] = temp;
-                pivotIndex++;
+                array[i] = array[insertion];
+                array[insertion] = temp;
+                insertion++;
             }
         }
-        array[high] = array[pivotIndex];
-        array[pivotIndex] = pivot;
-        return pivotIndex;
+        array[high] = array[insertion];
+        array[insertion] = pivot;
+        return insertion;
     }
 
     private int findKth(int[] array, int low, int high, int targetIndex) {
