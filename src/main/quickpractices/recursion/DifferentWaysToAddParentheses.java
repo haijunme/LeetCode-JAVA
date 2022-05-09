@@ -5,7 +5,7 @@ import java.util.*;
 public class DifferentWaysToAddParentheses {
 
     public List<Integer> diffWaysToCompute(String input) {
-        List<Integer> result = new LinkedList<Integer>();
+        List<Integer> result = new ArrayList<>();
         for (int i = 0; i < input.length(); i ++) {
             char c = input.charAt(i);
             if (c == '+' || c == '-' || c == '*') {
@@ -23,6 +23,7 @@ public class DifferentWaysToAddParentheses {
         }
         return result;
     }
+
     private int cal(int num1, int num2, char c) {
         if (c == '+') {
             return num1 + num2;
