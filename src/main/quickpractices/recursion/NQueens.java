@@ -17,40 +17,40 @@ public class NQueens {
             }
         }
         // diagonally check top-left to current
-        int i = row;
-        int j = column;
+        int i = row - 1;
+        int j = column - 1;
         while (i >= 0 && j >= 0) {
-            if (i != row && board[i][j] == 'Q') {
+            if (board[i][j] == 'Q') {
                 return false;
             }
             i--;
             j--;
         }
         // diagonally check current to bottom-right
-        i = row;
-        j = column;
+        i = row + 1;
+        j = column + 1;
         while (i < N && j < N) {
-            if (i != row && board[i][j] == 'Q') {
+            if (board[i][j] == 'Q') {
                 return false;
             }
             i++;
             j++;
         }
         // diagonally check bottom-left to current
-        i = row;
-        j = column;
+        i = row + 1;
+        j = column - 1;
         while (i < N && j >= 0) {
-            if (i != row && board[i][j] == 'Q') {
+            if (board[i][j] == 'Q') {
                 return false;
             }
             i++;
             j--;
         }
         // diagonally check current to top-right
-        i = row;
-        j = column;
+        i = row - 1;
+        j = column + 1;
         while (i >= 0  && j < N) {
-            if (i != row && board[i][j] == 'Q') {
+            if (board[i][j] == 'Q') {
                 return false;
             }
             i--;
