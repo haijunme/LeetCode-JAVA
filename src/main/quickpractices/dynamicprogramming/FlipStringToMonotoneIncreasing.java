@@ -2,6 +2,21 @@ package main.quickpractices.dynamicprogramming;
 
 public class FlipStringToMonotoneIncreasing {
 
+    private static class OptimizedSolution {
+        private int minFlipsMonoIncr(String S) {
+            int N = S.length();
+            int[] P = new int[N + 1];
+            for (int i = 0; i < N; ++i)
+                P[i + 1] = P[i] + (S.charAt(i) == '1' ? 1 : 0);
+
+            int ans = Integer.MAX_VALUE;
+            for (int j = 0; j <= N; ++j) {
+                ans = Math.min(ans, P[j] + N - j - (P[N] - P[j]));
+            }
+
+            return ans;
+        }
+    }
 //    public int minFlipsMonoIncr(String s) {
 //        char[] digits = s.toCharArray();
 //        int minFlip = Integer.MAX_VALUE;
@@ -36,7 +51,7 @@ public class FlipStringToMonotoneIncreasing {
         int currentOne = 0;
         int currentZero = 0;
         for (int i = 0; i < N; i++) {
-            if (i == 0 || i == N-1) {
+            if (i == 0 || i == N - 1) {
                 if (S.charAt(i) == '0') {
                     totalFlip = Math.min(totalFlip, totalOne);
                     currentZero++;
@@ -58,7 +73,7 @@ public class FlipStringToMonotoneIncreasing {
     }
 
     public static void main(String[] args) {
-        var solution = new FlipStringToMonotoneIncreasing();
-        System.out.println(solution.minFlipsMonoIncr("100000001010000"));
+        var solution = new OptimizedSolution();
+        System.out.println(solution.minFlipsMonoIncr("1111"));
     }
 }

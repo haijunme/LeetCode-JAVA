@@ -1,4 +1,4 @@
-package main.quickpractices;
+package main.quickpractices.graph;
 
 import java.util.*;
 

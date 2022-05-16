@@ -1,4 +1,4 @@
-package main.quickpractices.bfsdfs;
+package main.quickpractices.graph.bfsdfs;
 
 public class GasStation {
     public int canCompleteCircuit(int[] gas, int[] cost) {

@@ -1,4 +1,4 @@
-package main.quickpractices.bfsdfs;
+package main.quickpractices.graph.bfsdfs;
 
 import java.util.*;
 
@@ -38,7 +38,7 @@ public class NumberOfOperationsToMakeNetworkConnected {
         for (int i = 0; i < n; i++) {
             if (!visited[i]) {
                 disconnectedGraphCount++;
-                int temporary =  dfs(i);
+                int temporary = dfs(i);
                 cablesKept += temporary > 0 ? temporary - 1 : 0;
             }
         }

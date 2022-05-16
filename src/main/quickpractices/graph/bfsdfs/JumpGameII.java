@@ -1,4 +1,4 @@
-package main.quickpractices.bfsdfs;
+package main.quickpractices.graph.bfsdfs;
 
 import java.util.LinkedList;
 import java.util.Queue;

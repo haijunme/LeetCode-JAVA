@@ -18,9 +18,6 @@ public class LongestSubstringWithAtMostKDistinctCharacters {
 
         while (right < n) {
             Character character = s.charAt(right);
-            if (rightmostPosition.containsKey(character)) {
-                rightmostPosition.remove(character);
-            }
             rightmostPosition.put(character, right++);
 
             if (rightmostPosition.size() == k + 1) {
