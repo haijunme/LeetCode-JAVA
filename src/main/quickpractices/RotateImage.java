@@ -3,26 +3,15 @@ package main.quickpractices;
 import java.util.Arrays;
 
 public class RotateImage {
-    private int[][] matrix;
-
-    public void fourWayRotate(int[] pos4, int[] pos3, int[] pos2, int[] pos1) {
-        int temporary = matrix[pos4[0]][pos4[1]];
-        matrix[pos4[0]][pos4[1]] = matrix[pos3[0]][pos3[1]];
-        matrix[pos3[0]][pos3[1]] = matrix[pos2[0]][pos2[1]];
-        matrix[pos2[0]][pos2[1]] =matrix[pos1[0]][pos1[1]];
-        matrix[pos1[0]][pos1[1]] = temporary;
-    }
-
     public void rotate(int[][] matrix) {
-        this.matrix = matrix;
-        int rowMaxLoop = matrix.length/2-1;
-        for (int i = 0; i <= rowMaxLoop; i++) {
-            for (int j = 0; i+j < matrix.length-1-i; j++) {
-                int[] pos1 = new int[]{i, i+j};
-                int[] pos2 = new int[]{i+j, matrix.length-1-i};
-                int[] pos3 = new int[]{matrix.length-i-1, matrix.length-1-i-j};
-                int[] pos4 = new int[]{matrix.length-i-1-j, i};
-                fourWayRotate(pos4, pos3, pos2, pos1);
+        int n = matrix.length;
+        for (int i = 0; i < (n + 1) / 2; i ++) {
+            for (int j = 0; j < n / 2; j++) {
+                int temp = matrix[n - 1 - j][i];
+                matrix[n - 1 - j][i] = matrix[n - 1 - i][n - j - 1];
+                matrix[n - 1 - i][n - j - 1] = matrix[j][n - 1 -i];
+                matrix[j][n - 1 - i] = matrix[i][j];
+                matrix[i][j] = temp;
             }
         }
     }

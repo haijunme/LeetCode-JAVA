@@ -8,6 +8,7 @@ public class LowestCommonAncestor {
         if (root == null || root == p || root == q) {
             return root;
         }
+
         TreeNode left_res = lowestCommonAncestor(root.left, p, q);
         TreeNode right_res = lowestCommonAncestor(root.right, p, q);
 

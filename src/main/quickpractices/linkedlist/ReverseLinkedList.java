@@ -1,7 +1,8 @@
-package main.quickpractices;
+package main.quickpractices.linkedlist;
 
 import main.shared.ListNode;
 
+// Basic building technique?
 public class ReverseLinkedList {
     public ListNode reverseList(ListNode head) {
         ListNode previous = null;
