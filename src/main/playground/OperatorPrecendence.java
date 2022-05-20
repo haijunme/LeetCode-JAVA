@@ -1,6 +1,7 @@
 package main.playground;
 
 public class OperatorPrecendence {
+    private int test = 0;
 
     private static boolean testOne() {
         System.out.println("1");
@@ -19,6 +20,8 @@ public class OperatorPrecendence {
 
 
     public static void main(String[] args) {
+        var instance = new OperatorPrecendence();
+        System.out.println(instance.test);
         System.out.println(1 << 13);
     }
 }
