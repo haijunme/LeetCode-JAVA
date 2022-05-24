@@ -10,15 +10,16 @@ public class LongestSubstringWithoutRepeatingCharacters {
         // try to extend the range [i, j]
         for (int j = 0, i = 0; j < n; j++) {
             if (map.containsKey(s.charAt(j))) {
-                i = Math.max(map.get(s.charAt(j)), i);
+                // might have already pushed left to a "more right" position
+                i = Math.max(map.get(s.charAt(j)) + 1, i);
             }
             ans = Math.max(ans, j - i + 1);
-            map.put(s.charAt(j), j + 1);
+            map.put(s.charAt(j), j);
         }
         return ans;
     }
 
     public static void main(String[] args) {
-        lengthOfLongestSubstring("abacde");
+        lengthOfLongestSubstring("abba");
     }
 }

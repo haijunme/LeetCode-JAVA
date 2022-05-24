@@ -1,4 +1,4 @@
-package main.quickpractices.binarytree;
+package main.quickpractices.binarytree.doublecompleteinduction;
 
 import main.shared.TreeNode;
 
