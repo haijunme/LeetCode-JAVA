@@ -1,4 +1,4 @@
-package main.quickpractices.fundamental;
+package main.quickpractices.fundamental.sorting;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package main.quickpractices.fundamental;
+package main.quickpractices.fundamental.sorting;
 
 public class QuickSelect {
 
