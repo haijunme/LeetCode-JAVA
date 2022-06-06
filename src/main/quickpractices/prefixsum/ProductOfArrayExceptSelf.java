@@ -1,4 +1,4 @@
-package main.quickpractices.dynamicprogramming;
+package main.quickpractices.prefixsum;
 
 import java.util.Arrays;
 
