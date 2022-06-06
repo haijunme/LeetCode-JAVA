@@ -5,12 +5,12 @@ import main.shared.TreeNode;
 import java.util.*;
 
 public class FindLeavesOfBinaryTree {
-    private Map<Integer, List<Integer>> nodesByLevel = new HashMap<>();
+    private List<List<Integer>> nodesByLevel = new ArrayList<>();
     private int maxLevel;
 
     private int arrangeNodesByLevel(TreeNode root) {
         if (root.left == null && root.right == null) {
-            nodesByLevel.putIfAbsent(0, new ArrayList<>()) ;
+            if (nodesByLevel.size() == 0) nodesByLevel.add(new ArrayList<>());
             nodesByLevel.get(0).add(root.val);
             return 0;
         }
@@ -24,18 +24,14 @@ public class FindLeavesOfBinaryTree {
         }
         int currentLevel = Math.max(leftLevel, rightLevel);
         maxLevel = Math.max(currentLevel, maxLevel);
-        nodesByLevel.putIfAbsent(currentLevel, new ArrayList<>()) ;
+        if (nodesByLevel.size() == currentLevel) nodesByLevel.add(new ArrayList<>());
         nodesByLevel.get(currentLevel).add(root.val);
         return currentLevel;
     }
 
     public List<List<Integer>> findLeaves(TreeNode root) {
-        List<List<Integer>> result = new ArrayList<>();
         arrangeNodesByLevel(root);
-        for (int i = 0; i <= maxLevel; i++) {
-            result.add(nodesByLevel.get(i));
-        }
-        return result;
+        return nodesByLevel;
     }
 
     public static void main(String[] args) {
@@ -47,6 +43,6 @@ public class FindLeavesOfBinaryTree {
 
         TreeNode singleNode = new TreeNode(1);
         var solution = new FindLeavesOfBinaryTree();
-        System.out.println(solution.findLeaves(singleNode));
+        System.out.println(solution.findLeaves(node1));
     }
 }
