@@ -82,6 +82,7 @@ public class SumOfSubarrayMinimums {
                     stack.pop();
                 }
                 int lastIndex = stack.empty() ? -1 : stack.peek();
+                //  memoized = previous part
                 int memoized = lastIndex < 0 ? 0 : memo[lastIndex];
                 memo[i] = memoized + (i - lastIndex) * arr[i];
                 answer = (answer + memo[i]) % 1_000_000_007;
@@ -92,7 +93,7 @@ public class SumOfSubarrayMinimums {
     }
 
     public static void main(String[] args) {
-        int[] sampleInput = new int[]{3, 1, 2, 5, 4};
+        int[] sampleInput = new int[]{1,2,3};
 //        var solution = new SumOfSubarrayMinimums();
 //        System.out.println(solution.sumSubarrayMins(new int[]{3,1,2,4}));
 
@@ -102,7 +103,7 @@ public class SumOfSubarrayMinimums {
 //        var stupidRecursion = new StupidRecursion();
 //        System.out.println(stupidRecursion.sumSubarrayMins(sampleInput));
 
-        var improvedPolynomial = new ImprovedPolynomial();
-        System.out.println(improvedPolynomial.sumSubarrayMins(sampleInput));
+        var solution = new MonotonicStack();
+        System.out.println(solution.sumSubarrayMins(sampleInput));
     }
 }
