@@ -1,4 +1,4 @@
-package main.quickpractices.array;
+package main.quickpractices.bitmask;
 
 public class MaximumProductOfWordLengths {
     public int bitNumber(char ch) {
