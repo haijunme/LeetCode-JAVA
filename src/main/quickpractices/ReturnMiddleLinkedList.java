@@ -14,7 +14,7 @@ public class ReturnMiddleLinkedList {
         return arrayList.get(arrayList.size() / 2);
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) {        
         ListNode node6 = new ListNode(6);
         ListNode node5 = new ListNode(5, node6);
         ListNode node4 = new ListNode(4, node5);
