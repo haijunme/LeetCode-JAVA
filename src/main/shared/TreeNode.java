@@ -1,9 +1,11 @@
 package main.shared;
 
+// Graphite Test
 public class TreeNode {
     public int val;
     public TreeNode left;
     public TreeNode right;
+    public int val2;
 
     public TreeNode() {
     }
